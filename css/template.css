@@ -1,37 +1,149 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+:root {
+    --primary: #3b82f6;
+    --secondary: #8b5cf6;
+    --bg: #0f172a;
+    --text: #e2e8f0;
+    --card-bg: #1e293b;
+    --line-color: #334155;
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ---- Table ---- */
+table.tg {
+    border-collapse: collapse;
+    border: none;
+    width: 100%;
+    background-color: var(--bg);
+}
+
+table.tg td,
+table.tg th {
+    border: 1px solid var(--line-color);
+    padding: 0;
+    vertical-align: top;
+}
+
+/* ---- Logo row ---- */
+th.logo {
+    background: linear-gradient(to right, var(--bg), var(--card-bg));
+    border-bottom: 2px solid var(--primary);
+    padding: 1.5rem 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: left;
+    background-clip: padding-box;
+    color: var(--text);
+    letter-spacing: 1px;
+    background-image: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ---- Header / Nav ---- */
 header {
-    background-color: #1e293b;
-    color: white;
+    background: linear-gradient(to right, var(--bg), var(--card-bg));
+    border-bottom: 2px solid var(--primary);
     padding: 15px 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav a {
-    color: white;
+    color: var(--text);
     text-decoration: none;
-    margin-left: 20px;
     font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: background 0.3s ease, color 0.3s ease;
+    font-size: 0.95rem;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: var(--primary);
+    color: #fff;
+    text-decoration: none;
 }
 
-.btn {
-    background-color: #38bdf8;
-    padding: 8px 15px;
-    border-radius: 5px;
-    color: #0f172a;
+/* ---- Content cells ---- */
+td.tg-0lax {
+    background-color: var(--card-bg);
+    padding: 20px 30px;
+    border: 1px solid var(--line-color);
+    transition: border-color 0.3s ease;
+}
+
+td.tg-0lax:hover {
+    border-color: var(--primary);
+}
+
+/* ---- Typography ---- */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h3 {
+    display: inline-block;
     font-weight: bold;
+    font-size: 1rem;
+    color: var(--secondary);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+p {
+    margin-bottom: 10px;
+    color: #cbd5e1;
+}
+
+/* ---- Images ---- */
+td.tg-0lax img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    border: 1px solid var(--line-color);
+}
+
+/* ---- Responsive ---- */
+@media screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    td.tg-0lax {
+        padding: 12px 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
 }

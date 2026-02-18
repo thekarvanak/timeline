@@ -36,6 +36,14 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
+h2 {
+color: #f472b6;
+text-transform: uppercase;
+text-decoration: none;
+letter-spacing: 3px;
+/* text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);     */
+}
+
 header p {
     color: #94a3b8;
     font-size: 1.1rem;
@@ -66,6 +74,15 @@ header p {
     background-color: inherit;
     width: 50%;
     cursor: pointer;
+}
+
+.container > a,
+.container > a:link,
+.container > a:visited,
+.container > a:hover,
+.container > a:active {
+    text-decoration: none;
+    color: inherit;
 }
 
 .container::after {
